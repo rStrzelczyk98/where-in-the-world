@@ -10,9 +10,6 @@ window.addEventListener("load", getData);
 filter.addEventListener("click", filterBy.bind(this));
 search.addEventListener("input", searchCountry);
 document.addEventListener("click", display.bind(this));
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Backspace") changeRegion();
-});
 
 function display(e) {
   if (e.target.closest(".card")) {
@@ -80,6 +77,7 @@ function changeRegion() {
 }
 
 function searchCountry() {
+  changeRegion();
   [...content.children].forEach((el) => {
     if (!el.classList.contains("hidden") && el.classList.contains("card")) {
       if (
