@@ -175,7 +175,9 @@ function countryDetailsCard(data) {
               <p>Native Name:<span>${handleUndefined(
                 data.nativeName
               )}</span></p>
-              <p>Population:<span>${handleUndefined(data.population)}</span></p>
+              <p>Population:<span>${new Intl.NumberFormat().format(
+                data.population
+              )}</span></p>
               <p>Region:<span>${handleUndefined(data.region)}</span></p>
               <p>Sub Region:<span>${handleUndefined(data.subregion)}</span></p>
               <p>Capital:<span>${handleUndefined(data.capital)}</span></p>
