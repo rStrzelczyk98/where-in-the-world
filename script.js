@@ -203,7 +203,7 @@ function displayBorders(data) {
   if (!data) return;
   let str = "";
   data.forEach((el) => {
-    str += `<button class="border" onclick="displayCountryDetails(countryData['${el}'])">${countryData[el].name}</button>`;
+    str += `<button class="btn-border" onclick="displayCountryDetails(countryData['${el}'])">${countryData[el].name}</button>`;
   });
   return str;
 }

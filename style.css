@@ -1,22 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,800;1,600&display=swap");
+:root {
+  --darkBlue: #2b3945; /*(Dark Mode Elements)*/
+  --veryDarkBlue: #202c37; /*(Dark Mode Background)  */
+  --veryDarkBlueText: #111517; /*(Light Mode Text)*/
+  --darkGray: #858585; /*(Light Mode Input)*/
+  --veryLightGray: #fafafa; /*(Light Mode Background)*/
+  --white: #ffffff; /*(Dark Mode Text & Light Mode Elements)*/
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
 }
 body {
-  background-color: rgb(247, 247, 247);
+  color: var(--veryDarkBlueText);
+  background-color: var(--veryLightGray);
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
 }
+button {
+  background-color: var(--white);
+  color: var(--veryDarkBlueText);
+  font-weight: 300;
+}
 .main-header {
-  background-color: white;
+  background-color: var(--white);
+  color: var(--veryDarkBlueText);
   position: fixed;
   top: 0;
   display: grid;
   width: 100%;
   z-index: 1;
-  box-shadow: 0 0.125rem 1rem #00000005;
+  box-shadow: 0 0.125rem 1rem #00000010;
 }
 .title {
   width: 100%;
@@ -28,6 +46,7 @@ body {
   padding: 1rem 2rem;
 }
 .title h1 {
+  font-weight: 800;
   font-size: 1.5rem;
 }
 .btn-theme {
@@ -35,7 +54,12 @@ body {
   outline: transparent;
   border: none;
   background-color: transparent;
+  background-image: url(./icons/light/moon-light.svg);
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
   padding: 0.5rem;
+  padding-left: 2rem;
 }
 .btn-theme:is(:hover, :focus) {
   cursor: pointer;
@@ -57,8 +81,10 @@ body {
   padding: 2rem;
 }
 .card {
+  background-color: var(--white);
   width: 16.25rem;
-  border-radius: 0.5rem;
+  min-height: 23rem;
+  border-radius: 0.25rem;
   overflow: hidden;
   box-shadow: 0 1rem 2rem #00000010;
   transition: all 250ms ease-in-out;
@@ -74,7 +100,7 @@ body {
 }
 
 .content:has(.card:hover) .card:not(.card:hover) {
-  filter: brightness(0.2) opacity(0.5);
+  filter: opacity(0.25);
 }
 .img {
   display: block;
@@ -86,14 +112,17 @@ body {
   padding: 1.5rem;
 }
 h2 {
+  font-weight: 600;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 .info p {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 0.875rem;
   margin-bottom: 0.5rem;
 }
 .info p > span {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .input-field {
@@ -106,6 +135,13 @@ h2 {
 }
 
 .input-field input {
+  font-weight: 300;
+  color: var(--darkGray);
+  background-image: url(./icons/light/search-light.svg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 1.2rem;
+  background-size: 1.5rem;
   width: 100%;
   max-width: 25rem;
   outline: transparent;
@@ -113,6 +149,10 @@ h2 {
   border-radius: 0.5rem;
   box-shadow: 0 0 1rem #00000015;
   padding: 1rem;
+  padding-left: 4rem;
+}
+.input-field input::placeholder {
+  color: var(--darkGray);
 }
 .select {
   position: relative;
@@ -120,7 +160,12 @@ h2 {
 .btn-filter {
   width: 10rem;
   padding: 1rem;
-  background-color: white;
+  background-color: var(--white);
+  background-image: url(./icons/light/chevron-light.svg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 95%;
+  background-size: 1rem;
   outline: transparent;
   border: none;
   border-radius: 0.5rem;
@@ -151,7 +196,7 @@ h2 {
   min-height: 100vh;
   width: 100%;
   max-width: 79rem;
-  background-color: rgb(247, 247, 247);
+  background-color: var(--veryLightGray);
   display: grid;
   padding: 2rem;
   padding-top: 6rem;
@@ -163,6 +208,20 @@ h2 {
 .btn-back {
   align-self: start;
   justify-self: left;
+  padding: 0.5rem;
+  padding-inline: 2rem 1rem;
+  background-image: url(./icons/light/arrow-back-light.svg);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 0.75rem;
+  background-size: 1rem;
+  outline: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem #00000015;
+}
+.btn-back:is(:hover, :focus) {
+  cursor: pointer;
 }
 .country-details {
   align-self: start;
@@ -188,18 +247,28 @@ h2 {
   gap: 0.5rem;
 }
 .borders p {
-  font-weight: 700;
+  font-weight: 600;
   width: 100%;
 }
 .first p,
 .second p {
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.25rem;
 }
 .first p > span,
 .second p > span {
   margin-left: 0.5rem;
-  font-weight: 400;
+  font-weight: 300;
+}
+.btn-border {
+  padding: 0.5rem 1rem;
+  outline: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem #00000015;
+}
+.btn-border:is(:hover, :focus) {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 550px) {
@@ -235,6 +304,40 @@ h2 {
     max-height: 50vh;
   }
 }
+@media (prefers-color-scheme: dark) {
+  body,
+  .modal {
+    color: var(--white);
+    background-color: var(--veryDarkBlue);
+  }
+  .main-header,
+  .btn-filter,
+  .btn-theme,
+  .btn-back,
+  .btn-border,
+  .card,
+  .input-field input,
+  .list {
+    color: var(--white);
+    background-color: var(--darkBlue);
+  }
+  .input-field input::placeholder {
+    color: var(--white);
+  }
+  .input-field input {
+    background-image: url(./icons/dark/search-dark.svg);
+  }
+  .btn-theme {
+    background-image: url(./icons/dark/moon-dark.svg);
+  }
+  .btn-filter {
+    background-image: url(./icons/dark/chevron-dark.svg);
+  }
+  .btn-back {
+    background-image: url(./icons/dark/arrow-back-dark.svg);
+  }
+}
+
 .hidden {
   display: none;
 }
