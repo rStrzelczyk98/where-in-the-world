@@ -126,7 +126,7 @@ function countryCard(data) {
     .concat("_" + data.id)} class="card ${data.region.toLowerCase()} ${
     (Math.random() >= 0.5 ? 1 : 0) ? "left" : "right"
   }" title="Click for details">
-        <img class="img" src="${data.flag.png}"/>
+        <img class="img" src="${data.flag.png}" alt=""/>
         <div class="info">
         <h2>${data.name}</h2>
         <p>Population: <span>${new Intl.NumberFormat().format(
