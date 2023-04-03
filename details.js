@@ -30,7 +30,7 @@ function countryDetailsCard(data) {
   setTimeout(() => {
     let borders = data?.borders ? displayBorders(data.borders) : "hidden";
     const card = `<main class="country-card">
-        <a class="btn btn-back fromLeft delay--3" href="./">Back</a>
+        <a class="btn btn-back fromLeft delay--3" href="https://rstrzelczyk98.github.io/where-in-the-world/">Back</a>
         <figure class="country-details">
           <img class="flag fromLeft" src="${handleUndefined(
             data.flag.svg,
