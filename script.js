@@ -11,8 +11,6 @@ theme.addEventListener("click", changeTheme);
 filter.addEventListener("click", filterBy);
 search.addEventListener("input", searchCountry);
 
-// ----------------------------------------------------------------------------------
-// GET AND HANDLE DATA
 async function getData() {
   if (
     JSON.parse(localStorage.getItem("darkMode")) ||

@@ -1,7 +1,6 @@
 "use strict";
 const theme = document.querySelector(".btn-theme");
 let countryData;
-
 async function getData() {
   const key = window.location.href.slice(-3);
   if (JSON.parse(localStorage.getItem("darkMode"))) {
@@ -30,7 +29,7 @@ function countryDetailsCard(data) {
   setTimeout(() => {
     let borders = data?.borders ? displayBorders(data.borders) : "hidden";
     const card = `<main class="country-card">
-        <a class="btn btn-back fromLeft delay--3" href="https://rstrzelczyk98.github.io/where-in-the-world/">Back</a>
+        <a class="btn btn-back fromLeft delay--3" href="./">Back</a>
         <figure class="country-details">
           <img class="flag fromLeft" src="${handleUndefined(
             data.flag.svg,
@@ -66,7 +65,7 @@ function countryDetailsCard(data) {
         </figure>
     </main>`;
     document.body.insertAdjacentHTML("beforeend", card);
-  }, 0);
+  }, 500);
 }
 function displayBorders(data) {
   if (!data) return;
