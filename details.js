@@ -23,6 +23,7 @@ function goBack() {
   document.querySelector(".country-card").remove();
 }
 function countryDetailsCard(data) {
+  window.scroll(0, 0);
   if (document.querySelector(".country-card")) {
     document.querySelector(".country-card").remove();
   }

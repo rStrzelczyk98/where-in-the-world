@@ -69,7 +69,7 @@ body {
   background-color: var(--white);
   background-repeat: no-repeat;
   outline: transparent;
-  border: none;
+  border: 1px solid var(--white);
   border-radius: 0.25rem;
   font-weight: 300;
 }
@@ -79,6 +79,12 @@ body {
 .item:hover,
 input[type="text"]:hover {
   cursor: pointer;
+}
+.btn:is(:hover, :focus) {
+  border-color: var(--veryDarkBlueText);
+}
+.btn-theme:is(:hover, :focus) {
+  border-color: var(--white);
 }
 a:is(:link, :visited, :hover, :active) {
   color: inherit;
@@ -344,11 +350,17 @@ body.dark,
   color: var(--white);
   background-color: var(--veryDarkBlue);
 }
+.dark .btn {
+  border-color: var(--darkBlue);
+}
+.dark .btn:is(:hover, :focus) {
+  border-color: var(--white);
+}
+.dark .btn-theme:is(:hover, :focus) {
+  border-color: var(--darkBlue);
+}
 .dark .main-header,
-.dark .btn-filter,
-.dark .btn-theme,
-.dark .btn-back,
-.dark .btn-border,
+.dark .btn,
 .dark .card,
 .dark .input-field input,
 .dark .list {
