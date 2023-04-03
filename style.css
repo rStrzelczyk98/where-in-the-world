@@ -237,6 +237,7 @@ h2 {
   overflow: hidden;
   background-color: var(--veryLightGray);
   min-height: max-content;
+  width: 100%;
   max-width: 79rem;
   display: grid;
   margin-inline: auto;
